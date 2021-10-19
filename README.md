@@ -13,6 +13,16 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ```
 
+For vscode:
+
+```shell
+mkdir ~/.dotfiles/.vscode && \
+mv ~/Library/Application\ Support/Code/User/settings.json ~/.dotfiles/.vscode/settings.json && \
+mv ~/Library/Application\ Support/Code/User/keybindings.json ~/.dotfiles/.vscode/keybindings.json && \
+ln -s ~/.dotfiles/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json && \
+ln -s ~/.dotfiles/.vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+```
+
 Install Homebrew, followed by the software listed in the Brewfile:
 
 ```shell

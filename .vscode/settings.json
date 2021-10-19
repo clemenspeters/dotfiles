@@ -1,0 +1,10 @@
+{
+    "yaml.schemas": {
+        "file:///Users/temporaryadmin/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "git.autofetch": true,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "explorer.confirmDragAndDrop": false
+}
