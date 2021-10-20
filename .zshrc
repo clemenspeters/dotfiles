@@ -124,6 +124,13 @@ alias sz="source ~/.zshrc"
 alias tf="terraform"
 alias vz="vim ~/.zshrc"
 
+# Generate long/safe/easy-to-copy passwords from your terminal with just `gpw` and both print plus copy directly to clipboard
+getPassword () {
+  newPassword=$(echo "${$(eval openssl rand 24 -base64)//[\/,+]/$(( $RANDOM % 9 + 1 ))}" | cut -c1-24)
+  echo "${newPassword}"
+  echo "${newPassword}" | pbcopy
+}
+alias gpw="getPassword"
 
 # Jump words with alt key
 bindkey "[C" forward-word
