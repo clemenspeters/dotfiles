@@ -10,6 +10,7 @@ Create symlinks in the Home directory to the real files in the repo:
 
 ```shell
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.zshenv ~/.zshenv
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ```
 
