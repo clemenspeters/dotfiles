@@ -4,6 +4,10 @@ tap "homebrew/core"
 tap "mongodb/brew"
 # Tool for managing secrets on Google Cloud
 brew "berglas"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # GitHub command-line tool
 brew "gh"
 # Open source programming language to build simple/reliable/efficient software
@@ -14,8 +18,6 @@ brew "openjdk"
 brew "gradle"
 # Improved top (interactive process viewer)
 brew "htop"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Platform built on V8 to build network applications
 brew "node"
 # Manage multiple Node.js versions
@@ -38,6 +40,8 @@ cask "1password"
 cask "adobe-acrobat-reader"
 # Application launcher and productivity software
 cask "alfred"
+# Utility that prevents the system from going to sleep
+cask "caffeine"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Client for the Dropbox cloud storage service
@@ -50,6 +54,8 @@ cask "github"
 cask "google-chrome"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
+# Kubernetes desktop client
+cask "infra"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Explore and manipulate your MongoDB data
@@ -62,5 +68,7 @@ cask "postman"
 cask "slack"
 # Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 # Desktop client for WhatsApp
 cask "whatsapp"
