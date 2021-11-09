@@ -64,8 +64,12 @@ cask "mongodb-compass"
 cask "ngrok"
 # Collaboration platform for API development
 cask "postman"
+# MySQL/MariaDB database management platform
+cask "sequel-pro"
 # Team communication and collaboration software
 cask "slack"
+# Music streaming service
+cask "spotify"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
