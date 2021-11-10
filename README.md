@@ -28,15 +28,17 @@ ln -f -s ~/.dotfiles/.vscode/keybindings.json ~/Library/Application\ Support/Cod
 
 Install Homebrew, followed by the software listed in the Brewfile:
 
+### Install Homebrew
+
 ```shell
-# These could also be in an install script.
-
-# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew doctor
+```
 
-# Then pass in the Brewfile location...
+### Install applications via homebrew
+
+```shell
 brew bundle --file ~/.dotfiles/Brewfile
-
 # ...or move to the directory first.
 cd ~/.dotfiles && brew bundle
 ```
@@ -60,6 +62,36 @@ Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) running:
 ```shell
 ZSH="$HOME/.dotfiles/.oh-my-zsh" && wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sh install.sh
+```
+
+## Show all file extensions in Mac finder (might require a restart to take effect)
+
+```shell
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+```
+
+## Generate ssh keypair
+
+```shell
+ssh-keygen -t rsa
+```
+
+## Login to github
+
+```shell
+gh auth login
+```
+
+## Authenticate to GCP
+
+```shell
+gcloud auth login
+```
+
+### Authenticate GCR. See: <https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud-helper>
+
+```shell
+gcloud auth configure-docker
 ```
 
 ## Learn more
