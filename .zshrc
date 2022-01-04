@@ -112,6 +112,7 @@ source $ZSH/oh-my-zsh.sh
 alias ba="berglas access"
 alias dc="docker-compose"
 alias kc="kubectl"
+alias gfc="git fetch && git checkout"
 alias mk="minikube"
 alias ms="make start"
 alias nb="npm run build"
