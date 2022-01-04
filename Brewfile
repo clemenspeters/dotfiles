@@ -6,6 +6,10 @@ tap "mongodb/brew"
 brew "berglas"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Core application library for C
+brew "glib"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # GitHub command-line tool
@@ -18,6 +22,8 @@ brew "openjdk"
 brew "gradle"
 # Improved top (interactive process viewer)
 brew "htop"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
 # Platform built on V8 to build network applications
 brew "node"
 # Manage multiple Node.js versions
@@ -28,6 +34,8 @@ brew "parquet-tools"
 brew "tfenv"
 # Internet file retriever
 brew "wget"
+# JavaScript package manager
+brew "yarn"
 # UNIX shell (command interpreter)
 brew "zsh"
 # This package contains standard utilities for interacting with MongoDB.
@@ -42,6 +50,8 @@ cask "adobe-acrobat-reader"
 cask "alfred"
 # Utility that prevents the system from going to sleep
 cask "caffeine"
+# Universal database tool and SQL client
+cask "dbeaver-community"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Client for the Dropbox cloud storage service
@@ -64,6 +74,8 @@ cask "mongodb-compass"
 cask "ngrok"
 # Collaboration platform for API development
 cask "postman"
+# MongoDB management tool
+cask "robo-3t"
 # MySQL/MariaDB database management platform
 cask "sequel-pro"
 # Team communication and collaboration software
