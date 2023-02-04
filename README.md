@@ -70,6 +70,13 @@ sh install.sh
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 ```
 
+## Show hidden files and folders in finder
+
+```shell
+defaults write com.apple.Finder AppleShowAllFiles true && \
+killall Finder
+```
+
 ## Generate ssh keypair
 
 ```shell
