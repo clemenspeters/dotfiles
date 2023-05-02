@@ -123,7 +123,8 @@ alias rmb="rm -rf dist && npm run build"
 alias rmi="rm -rf node_modules && npm i"
 alias sz="source ~/.zshrc"
 alias tf="terraform"
-alias vz="vim ~/.zshrc"
+alias nv="nvim"
+alias vz="nvim ~/.zshrc"
 
 # Generate long/safe/easy-to-copy passwords from your terminal with just `gpw` and both print plus copy directly to clipboard
 getPassword () {
