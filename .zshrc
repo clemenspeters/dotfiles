@@ -128,7 +128,7 @@ alias vz="nvim ~/.zshrc"
 
 # Generate long/safe/easy-to-copy passwords from your terminal with just `gpw` and both print plus copy directly to clipboard
 getPassword () {
-  newPassword=$(echo "${$(eval openssl rand 24 -base64)//[\/,+]/$(( $RANDOM % 9 + 1 ))}" | cut -c1-24)
+  newPassword=$(echo "${$(eval openssl rand -base64 24)//[\/,+]/$(( $RANDOM % 9 + 1 ))}" | cut -c1-24)
   echo "${newPassword}"
   echo "${newPassword}" | pbcopy
 }
