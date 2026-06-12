@@ -12,5 +12,10 @@ brew "neovim"
 brew "nvm"
 
 # Apps
+cask "1password"
+cask "alfred"
+cask "docker-desktop"
 cask "iterm2"
+cask "postman"
 cask "visual-studio-code"
+cask "whatsapp"
