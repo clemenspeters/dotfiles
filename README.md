@@ -1,9 +1,39 @@
 # .dotfiles
 
-Clone repo into new hidden directory:
+Small macOS setup focused on shell, Git, iTerm2, VS Code, and lightweight CLI tools.
+
+## New Mac setup
+
+Clone repo into a hidden directory:
 
 ```shell
 git clone https://github.com/clemenspeters/dotfiles.git ~/.dotfiles
+```
+
+Install Homebrew if needed:
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew doctor
+```
+
+Install the curated software list:
+
+```shell
+brew bundle --file ~/.dotfiles/Brewfile
+```
+
+Install Oh My Zsh into this dotfiles directory:
+
+```shell
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.dotfiles/.oh-my-zsh
+```
+
+Create the nvm directory expected by Homebrew's nvm package:
+
+```shell
+mkdir -p ~/.nvm
 ```
 
 Create symlinks in the Home directory to the real files in the repo:
@@ -17,33 +47,18 @@ ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 You can use `.zshenv` for values you don't want to commit since it's changes are ignored (using `git update-index --skip-worktree .zshenv`).  
 If you want to commit changes to that file use `git update-index --no-skip-worktree .zshenv` and to see all skipped files use `git ls-files -v . | grep ^S`.
 
-For vscode:
+## Optional VS Code settings
+
+Review the files in `.vscode/` before linking them. If they still match your current preferences:
 
 ```shell
 ln -f -s ~/.dotfiles/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -f -s ~/.dotfiles/.vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 ```
 
-## Homebrew
+## Homebrew maintenance
 
-Install Homebrew, followed by the software listed in the Brewfile:
-
-### Install Homebrew
-
-```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew doctor
-```
-
-### Install applications via homebrew
-
-```shell
-brew bundle --file ~/.dotfiles/Brewfile
-# ...or move to the directory first.
-cd ~/.dotfiles && brew bundle
-```
-
-To create your own Brewfile run:
+To recreate the Brewfile from the current machine:
 
 ```shell
 brew bundle dump --describe
@@ -55,47 +70,44 @@ To update your Brewfile run:
 brew bundle dump --describe --force
 ```
 
-## Oh My Zsh
+## macOS Finder settings
 
-Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) running:
-
-```shell
-ZSH="$HOME/.dotfiles/.oh-my-zsh" && wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sh install.sh
-```
-
-## Show all file extensions in Mac finder (might require a restart to take effect)
+Show all file extensions in Finder:
 
 ```shell
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 ```
 
-## Show hidden files and folders in finder
+Show hidden files and folders in Finder:
 
 ```shell
 defaults write com.apple.Finder AppleShowAllFiles true && \
 killall Finder
 ```
 
-## Generate ssh keypair
+## GitHub setup
+
+Generate an SSH keypair if you do not already have one:
 
 ```shell
-ssh-keygen -t rsa
+ssh-keygen -t ed25519 -C "13015002+clemenspeters@users.noreply.github.com"
 ```
 
-## Login to github
+Log in to GitHub CLI:
 
 ```shell
 gh auth login
 ```
 
-## Authenticate to GCP
+## Optional GCP setup
+
+Only run this after installing `google-cloud-sdk`:
 
 ```shell
 gcloud auth login
 ```
 
-### Authenticate GCR. See: <https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud-helper>
+Authenticate Docker for Google Container Registry. See: <https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud-helper>
 
 ```shell
 gcloud auth configure-docker
