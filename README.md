@@ -24,6 +24,22 @@ Install the curated software list:
 brew bundle --file ~/.dotfiles/Brewfile
 ```
 
+If Docker Desktop fails while linking binaries into `/usr/local`, create the
+expected directories and rerun the bundle:
+
+```shell
+sudo mkdir -p /usr/local/bin /usr/local/cli-plugins
+sudo chown -R "$USER":admin /usr/local/bin /usr/local/cli-plugins
+brew bundle --file ~/.dotfiles/Brewfile
+```
+
+If `docker compose` is not found after installing Docker Desktop:
+
+```shell
+mkdir -p ~/.docker/cli-plugins
+ln -sf /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose ~/.docker/cli-plugins/docker-compose
+```
+
 Install Oh My Zsh into this dotfiles directory:
 
 ```shell
